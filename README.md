@@ -1,8 +1,6 @@
-# Grindyzer
+# Grindyzer Installation
 
-## Installation
-
-Perform the following steps starting from the directory containing the compressed application.
+Perform the following steps starting from the directory containing the compressed application. Commands for installing packages assumes a debian based distribution. Adjust accordingly if necessary. 
 
 ## Install docker on the host.
 - `apt update`
