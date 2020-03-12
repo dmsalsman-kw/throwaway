@@ -2,7 +2,7 @@
 
 Perform the following steps starting from the directory containing the compressed application. Commands for installing packages assumes a debian based distribution. Adjust accordingly if necessary. 
 
-## Install docker on the host.
+## Install docker on the host
 - `apt update`
 - `apt install apt-transport-https ca-certificates curl gnupg2 software-properties-common`
 - `curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -`
@@ -19,7 +19,7 @@ The test server deployed to for testing on March 10th, 2020 required the followi
 - `mkdir /sys/fs/cgroup/systemd`
 - `mount -t cgroup -o none,name=systemd cgroup /sys/fs/cgroup/systemd`
 
-## Ensure docker is running.
+## Ensure docker is running
 	
 Execute `docker run hello-world` expecting the output:
 ```
@@ -28,13 +28,13 @@ This message shows that your installation appears to be working correctly.
 ```
 
 
-## Install `docker-compose`. 
+## Install `docker-compose`
 
 - `curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose`
 - `chmod +x /usr/local/bin/docker-compose`
 
 
-## Disable any existing services running on ports 80, 443, and 3306.
+## Disable any existing services running on ports 80, 443, and 3306
 
 - `service httpd stop`
 - `service mysql stop`
@@ -44,11 +44,11 @@ This message shows that your installation appears to be working correctly.
 - `mkdir /var/docker/`
 - `tar -C /var/docker/ -xvf Grindyzer.tgz`
 
-## Enable log rotation:
+## Enable log rotation
 
 - `cp /var/docker/Grindyzer/scripts/logrotate.txt /etc/logrotate.d/docker`
 
-## Initialize the docker images for the first time:
+## Initialize the docker images for the first time
 
 - `cd /var/docker/Grindyzer/docker/grindyzer-production`
 - `docker-compose up`
